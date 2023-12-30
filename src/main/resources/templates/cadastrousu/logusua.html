@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Login Usuário</title>
+</head>
+<body>
+
+	<div class="container">
+		
+		<div th:replace="~{menu :: menu}"></div>
+		
+		<h1>Faça seu login</h1>
+		
+		<form action="">
+			<div>
+				<label>Nome:</label><input type="text" name="nome">
+			</div>
+			<div>
+				<label>CPF:</label><input type="text" name="cpf">
+			</div>
+			<div>
+				<label>E-mail:</label><input type="text" name="email">
+			</div>
+			<div>
+				<label>Telefone:</label><input type="text" name="telefone">
+			</div>
+			<div>
+				<button class="waves-effect waves-light btn" type="submit">Enviar</button>
+				<button class="waves-effect waves-light btn" type="reset">Limpar</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

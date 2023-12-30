@@ -47,4 +47,11 @@ public class logusu {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	@Override
+	public String toString() {
+		return "logusu [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", telefone=" + telefone
+				+ "]";
+	}
+	
 }

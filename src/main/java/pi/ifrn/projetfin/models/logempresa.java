@@ -54,5 +54,11 @@ public class logempresa {
 	public void setSite(String site) {
 		this.site = site;
 	}
+	@Override
+	public String toString() {
+		return "logempresa [id=" + id + ", nome=" + nome + ", ceo=" + ceo + ", cnpj=" + cnpj + ", email=" + email
+				+ ", site=" + site + "]";
+	}
+	
 	
 }

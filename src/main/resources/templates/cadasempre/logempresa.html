@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Cadastro empresa</title>
+</head>
+<body>
+
+	<div class="container">
+		<div th:replace="~{menu :: menu}"></div>
+		
+		<h1>Cadastre sua empresa</h1>
+		
+		<form action="">
+			
+			<div>
+				<label>Nome:</label><input type="text" name="nome">
+			</div>
+			<div>
+				<label>CEO:</label><input type="text" name="ceo">
+			</div>
+			<div>
+				<label>E-mail:</label><input type="text" name="email">
+			</div>
+			<div>
+				<label>Site da Empresa:</label><input type="text" name="site">
+			</div>
+			<div>
+				<button class="waves-effect waves-light btn" type="submit">Enviar</button>
+				<button class="waves-effect waves-light btn"type="reset">Limpar</button>
+			</div>
+		</form>	
+	</div>	
+</body>
+</html>

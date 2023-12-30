@@ -14,9 +14,9 @@ public class SolicitacaoController {
 	@Autowired
 	private SolicRepository sr;
 	
-	@RequestMapping("/recycle/solic")
+	@RequestMapping("/recycle/solicitacao")
 	public String solic() {
-		return "formsolic";
+		return "solic/formSolic";
 	}
 	
 	@PostMapping("/recycle")
@@ -24,6 +24,6 @@ public class SolicitacaoController {
 		
 		System.out.println(solic);
 		sr.save(solic);
-		return "test1"; 
+		return "solic/test1"; 
 	}
 }
