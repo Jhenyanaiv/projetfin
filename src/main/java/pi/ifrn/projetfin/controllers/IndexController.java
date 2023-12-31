@@ -11,4 +11,5 @@ public class IndexController {
 		System.out.println("chamou o metodo index");
 		return "home";
 	}
+	
 }
