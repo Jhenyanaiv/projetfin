@@ -8,18 +8,22 @@
 </head>
 <body>
 
-	<div class="container">
 		<div th:replace="~{menu :: menu}"></div>
 		
-		<h1>Cadastre sua empresa</h1>
+		<div class="container">
 		
-		<form action="">
+		<h1>Cadastre sua empresa!</h1>
+		
+		<form action="/cadasempre/logempresa" >
 			
 			<div>
 				<label>Nome:</label><input type="text" name="nome">
 			</div>
 			<div>
 				<label>CEO:</label><input type="text" name="ceo">
+			</div>
+			<div>
+				<label>CNPJ:</label><input type="text" name="cnpj">
 			</div>
 			<div>
 				<label>E-mail:</label><input type="text" name="email">
