@@ -1,10 +1,12 @@
 package pi.ifrn.projetfin.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,6 +23,11 @@ public class SolicitacaoController {
 	//Solicitacao
 	@Autowired
 	private SolicRepository sr;
+	
+	@GetMapping("/recycle")
+	public String home() {
+		return "home";
+	}
 	
 	@GetMapping("/solic/formSolic")
 	public String solic() {
@@ -42,6 +49,21 @@ public class SolicitacaoController {
 		ModelAndView mv = new ModelAndView("solic/listsol");
 		mv.addObject("listsol", recycle);
 		return mv;
+	}
+	
+	@GetMapping ("/solic/listsol/{id}")
+	public ModelAndView detalhar(@PathVariable Long id) {
+		ModelAndView md = new ModelAndView();
+		Optional<solic> opt = sr.findById(id);
+		if(opt.isEmpty()) {
+			md.setViewName("redirect:/solic/listsol");
+		}
+		
+		md.setViewName("solic/detalhes");
+		solic solic = opt.get();
+		
+		md.addObject("solic", solic);
+		return md;
 		
 	}
 	//Empresa
@@ -64,14 +86,14 @@ public class SolicitacaoController {
 	//Usuario
 	private UsuarioRepository ur;
 	
-	@GetMapping("/cadastrousu/logusu")
+	@GetMapping("/cadastrousu/logusua")
 	public String logusu() {
 		
 		System.out.println();
-		return "cadastrousu/logusu";
+		return "cadastrousu/logusua";
 	}
 	
-	@PostMapping("/cadastrousu/logusu")
+	@PostMapping("/cadastrousu/logusua")
 	public String adicionarUsu(logusu logusu) {
 		
 		System.out.println();
