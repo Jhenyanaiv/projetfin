@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -66,6 +67,28 @@ public class SolicitacaoController {
 		return md;
 		
 	}
+	 
+	 @PostMapping("/solic/listsol/{id}")
+	 public ModelAndView responderSolic(@PathVariable Long id) {
+	     ModelAndView modelAndView = new ModelAndView();
+	     Optional<solic> optionalSolic = sr.findById(id);
+	     
+	     if (optionalSolic.isPresent()) {
+	         solic solic = optionalSolic.get();
+
+	         solic.setRespondida(true);
+	         sr.save(solic);
+	         
+	         // Redirecione de volta para a lista de solicitações após responder
+	         modelAndView.setViewName("redirect:/solic/listsol");
+	     } else {
+	         // Se a solicitação não for encontrada, redirecione de volta para a lista de solicitações
+	         modelAndView.setViewName("redirect:/solic/listsol");
+	     }
+	     
+	     return modelAndView;
+	 }
+	 
 	//Empresa
 	private EmpreRepository er;
 	
@@ -83,6 +106,8 @@ public class SolicitacaoController {
 		er.save(logempresa);
 		return"cadasempre/login-enviado";
 	}
+	
+	
 	//Usuario
 	private UsuarioRepository ur;
 	

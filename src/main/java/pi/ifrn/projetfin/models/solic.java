@@ -52,6 +52,10 @@ public class solic {
 		return "solic [id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", email=" + email + ", descricao="
 				+ descricao + "]";
 	}
+	public void setRespondida(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

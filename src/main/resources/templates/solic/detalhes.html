@@ -16,28 +16,21 @@
 			    <div class="col s12">
 			      <div class="card">
 			        <div class="card-content">
-			          <span class="card-title">Veja em detalhes a solicitação de <span th:text="${solic.nome}"></span></span>
+			          <span class="card-title"><strong>Veja em detalhes a solicitação de <span th:text="${solic.nome}"></span></strong></span>
 			          <p><strong>ID: <span th:text="${solic.id}">1</span></strong></p>
 			          <p><strong>Nome: <span th:text="${solic.nome}">Jesus passa na frente</span></strong></p>
 			          <p><strong>Endereço: <span th:text="${solic.endereco}">rua todo mundo aprovado</span></strong></p>
 			          <p><strong>E-mail: <span th:text="${solic.email}">passatudo@gmail.com</span></strong></p>
 			          <p><strong>Descrição: <span th:text="${solic.descricao}">Computadores dos inteligentes</span></strong></p>
-			          <button onclick="responderSolicitacao">Responder</button></li>			       
-			        </div>
-			      </div>
-			    </div>
-			  </div>
-			  
-			  <div class="row">
-			    <div class="col s12">
-			      <div class="card">
-			        <div class="card-content">
-			          <span class="card-title">Veja em detalhes a solicitação de <span th:text="${solic.nome}"></span></span>
-			          <p><strong>ID: <span th:text="${solic.id}">1</span></strong></p>
-			          <p><strong>Nome: <span th:text="${solic.nome}">Jesus passa na frente</span></strong></p>
-			          <p><strong>Endereço: <span th:text="${solic.endereco}">rua todo mundo aprovado</span></strong></p>
-			          <p><strong>E-mail: <span th:text="${solic.email}">passatudo@gmail.com</span></strong></p>
-			          <p><strong>Descrição: <span th:text="${solic.descricao}">Computadores dos inteligentes</span></strong></p>			       
+			         <p></p>
+			         <p></p>
+			         <p></p>
+			         <p></p>
+			          <form th:action="@{/solic/listsol/{id}(id=${idSolic})}" method="post">
+    					<textarea name="textoResposta" rows="4" ></textarea>
+    					<button class="waves-effect waves-light btn" type="submit">
+       					 <span th:text="${idSolic}"></span> Responder</button>
+</form>		       
 			        </div>
 			      </div>
 			    </div>

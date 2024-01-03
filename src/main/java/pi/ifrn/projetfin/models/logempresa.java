@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 
 @Entity
 public class logempresa {
@@ -18,15 +17,7 @@ public class logempresa {
 	private String email;
 	private String site;
 	
-	@OneToMany
-	private solic solic;
 	
-	public solic getSolic() {
-		return solic;
-	}
-	public void setSolic(solic solic) {
-		this.solic = solic;
-	}
 	public Long getId() {
 		return id;
 	}
@@ -66,7 +57,7 @@ public class logempresa {
 	@Override
 	public String toString() {
 		return "logempresa [id=" + id + ", nome=" + nome + ", ceo=" + ceo + ", cnpj=" + cnpj + ", email=" + email
-				+ ", site=" + site + ", solic=" + solic + "]";
+				+ ", site=" + site + "]";
 	}
 
 	
