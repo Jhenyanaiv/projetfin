@@ -16,22 +16,14 @@
 			    <div class="col s12">
 			      <div class="card">
 			        <div class="card-content">
-			          <span class="card-title"><strong>Veja em detalhes da empresa <span th:text="${solic.nome}"></span></strong></span>
-			          <p><strong>ID: <span th:text="${solic.id}">1</span></strong></p>
-			          <p><strong>Nome da Empresa: <span th:text="${solic.nome}">Jesus passa na frente</span></strong></p>
-			          <p><strong>Ceo: <span th:text="${solic.ceo}">rua todo mundo aprovado</span></strong></p>
-			          <p><strong>Cnpj: <span th:text="${solic.cnpj}">passatudo@gmail.com</span></strong></p>
-			          <p><strong>E-mail: <span th:text="${solic.email}">Computadores dos inteligentes</span></strong></p>
-			          <p><strong>Site da Empresa: <span th:text="${solic.site}">Computadores dos inteligentes</span></strong></p>
-			         <p></p>
-			         <p></p>
-			         <p></p>
-			         <p></p>
-			          <form th:action="@{/solic/listsol/{id}(id=${idSolic})}" method="post">
-    					<textarea name="textoResposta" rows="4" ></textarea>
-    					<button class="waves-effect waves-light btn" type="submit">
-       					 <span th:text="${idSolic}"></span> Responder</button>
-					</form>		       
+			          <span class="card-title"><strong>Veja em detalhes da empresa <span th:text="${logempresa.nome}"></span></strong></span>
+			          <p><strong>ID: <span th:text="${logempresa.id}">1</span></strong></p>
+			          <p><strong>Nome da Empresa: <span th:text="${logempresa.nome}">Jesus passa na frente</span></strong></p>
+			          <p><strong>Ceo: <span th:text="${logempresa.ceo}">rua todo mundo aprovado</span></strong></p>
+			          <p><strong>Cnpj: <span th:text="${logempresa.cnpj}">passatudo@gmail.com</span></strong></p>
+			          <p><strong>E-mail: <span th:text="${logempresa.email}">Computadores dos inteligentes</span></strong></p>
+			          <p><strong>Site da Empresa: <span th:text="${logempresa.site}">Computadores dos inteligentes</span></strong></p>
+			        	       
 			        </div>
 			      </div>
 			    </div>

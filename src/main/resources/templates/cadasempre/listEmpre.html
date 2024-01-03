@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<title>Insert title here</title>
+<title>Listagem</title>
 </head>
 <body>
 
@@ -24,12 +24,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="s : ${listsol}">
-						<td th:text="${s.id}">1</td>
-						<td><a th:href="@{/solic/listsol/{id}(id=${s.id})}"><span th:text="${s.nome}">Fulano passa tudo</span></a></td>
-						<td th:text="${s.endereco}">rua passa com 100</td>
-						<td th:text="${s.email}">eupassocomtudo.com</td>
-						<td th:text="${s.descricao}">eu preciso me humilhar para isso</td>
+					<tr th:each="e : ${listEmpre}">
+						<td th:text="${e.id}">1</td>
+						<td><a th:href="@{/cadasempre/listEmpre/{id}(id=${e.id})}"><span th:text="${e.nome}">Empresa trabalha com Deus</span></a></td>
+						<td th:text="${e.ceo}">dono de toda a ciencia</td>
+						<td th:text="${e.cnpj}">00000000000000</td>
+						<td th:text="${e.email}">euseguronamaodedeus@gmail.com</td>
+						<td th:text="${e.site}">www.zeronao.com.br</td>
 					</tr>
 				</tbody>
 			</table>

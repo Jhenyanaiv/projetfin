@@ -93,7 +93,7 @@ public class SolicitacaoController {
 	private EmpreRepository er;
 	
 	@GetMapping("/cadasempre/logempresa") 
-	public String logempre() {
+	public String logempresa() {
 		
 		System.out.println();
 		return "cadasempre/logempresa";
@@ -110,12 +110,27 @@ public class SolicitacaoController {
 	@GetMapping("/cadasempre/listEmpre")
 	public ModelAndView listarEmpre() {
 		
-		List<logempresa> logempresa = er.findAll();
+		List<logempresa> logempresas = er.findAll();
 		ModelAndView mv = new ModelAndView("cadasempre/listEmpre");
-		mv.addObject("listEmpre", logempresa);
+		mv.addObject("listEmpre", logempresas);
 		return mv;
 	}
 	
+	@GetMapping ("/cadasempre/listEmpre/{id}")
+	public ModelAndView detalharEmpre(@PathVariable Long id) {
+		ModelAndView md = new ModelAndView();
+		Optional<logempresa> opt = er.findById(id);
+		if(opt.isEmpty()) {
+			md.setViewName("redirect:/cadasempre/listEmpre");
+		}
+		
+		md.setViewName("cadasempre/detalhesEmpre");
+		logempresa logempresa = opt.get();
+		
+		md.addObject("cadasempre", logempresa);
+		return md;
+		
+	}
 	
 	//Usuario
 	@Autowired
