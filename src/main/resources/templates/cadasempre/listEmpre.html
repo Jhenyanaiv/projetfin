@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:replace="~{menu :: menu}"></div>
+		<div class="container">
+			<h1>Solicitações:</h1>
+			
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome da Empresa</th>
+						<th>Ceo</th>
+						<th>Cnpj</th>
+						<th>Email</th>
+						<th>Site</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="s : ${listsol}">
+						<td th:text="${s.id}">1</td>
+						<td><a th:href="@{/solic/listsol/{id}(id=${s.id})}"><span th:text="${s.nome}">Fulano passa tudo</span></a></td>
+						<td th:text="${s.endereco}">rua passa com 100</td>
+						<td th:text="${s.email}">eupassocomtudo.com</td>
+						<td th:text="${s.descricao}">eu preciso me humilhar para isso</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</body>
+</html>
